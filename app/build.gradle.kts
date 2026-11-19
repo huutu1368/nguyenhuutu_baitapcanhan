@@ -16,7 +16,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    buildFeatures { viewBinding = true; buildConfig = true }
+    buildFeatures { viewBinding = true;
+        buildConfig = true }
 }
 dependencies {
     implementation("androidx.core:core-ktx:1.15.0")
