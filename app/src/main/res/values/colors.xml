@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="navy">#142D50</color>
+    <color name="navy_deep">#0B1C35</color>
+    <color name="cyan">#087E9A</color>
+    <color name="ice">#E0F3FA</color>
+    <color name="page">#F0F4FA</color>
+    <color name="ink">#1B2B43</color>
+    <color name="muted">#63748A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="danger">#AD394A</color>
 </resources>
