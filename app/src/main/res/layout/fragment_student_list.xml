@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/student_list_root" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/page">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar"
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:background="@color/navy" app:title="StudentDesk"
+            app:subtitle="NGUYỄN HỮU TÚ · SỔ SINH VIÊN"
+            app:titleTextColor="@color/white" app:subtitleTextColor="#D4E4FA"
+            app:menu="@menu/menu_student_list" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingHorizontal="20dp" android:paddingTop="16dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Danh bạ học tập" android:textSize="27sp"
+                android:textStyle="bold" android:textColor="@color/navy" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:text="Một nơi lưu trữ. Dễ dàng tra cứu."
+                android:textSize="13sp" android:textColor="@color/muted" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="16dp">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:layout_marginEnd="6dp"
+                    android:orientation="vertical" android:padding="16dp" android:background="@drawable/bg_navy">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="TỔNG HỒ SƠ" android:textSize="11sp" android:textColor="#D4E4FA" />
+                    <TextView android:id="@+id/tvTotal" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_marginTop="6dp"
+                        android:text="0" android:textSize="30sp" android:textStyle="bold" android:textColor="@color/white" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:layout_marginStart="6dp"
+                    android:orientation="vertical" android:padding="16dp" android:background="@drawable/bg_ice">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="GPA TRUNG BÌNH" android:textSize="11sp" android:textColor="#24546C" />
+                    <TextView android:id="@+id/tvAverage" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_marginTop="6dp"
+                        android:text="0.00" android:textSize="30sp" android:textStyle="bold" android:textColor="@color/navy" />
+                </LinearLayout>
+            </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="14dp" android:hint="Tìm tên, mã, email hoặc ngành"
+                app:boxBackgroundColor="@color/white" app:endIconMode="clear_text"
+                app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/edtSearch"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="text" android:maxLines="1" android:textSize="14sp" android:imeOptions="actionDone" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView android:id="@+id/tvStudentCountBadge" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginVertical="12dp"
+                android:text="DANH BẠ · 0 hồ sơ" android:textSize="12sp"
+                android:textStyle="bold" android:textColor="@color/muted" />
+        </LinearLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvStudents"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:paddingHorizontal="20dp" android:paddingBottom="96dp" android:clipToPadding="false" />
+            <TextView android:id="@+id/layoutEmpty" android:layout_width="match_parent"
+                android:layout_height="match_parent" android:padding="24dp" android:gravity="center"
+                android:text="Chưa có hồ sơ" android:textColor="@color/muted" android:visibility="gone" />
+            <ProgressBar android:id="@+id/progress" android:layout_width="36dp"
+                android:layout_height="36dp" android:layout_gravity="center" android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabAdd" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end" android:layout_margin="20dp"
+        android:text="Tạo hồ sơ" android:textColor="@color/white"
+        app:icon="@drawable/ic_add" app:iconTint="@color/white" app:backgroundTint="@color/navy" />
+</FrameLayout>
